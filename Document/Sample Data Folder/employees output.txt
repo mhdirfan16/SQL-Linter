@@ -1,0 +1,7 @@
+SELECT
+id,
+user_id,
+updated_at,
+status
+FROM   employees
+WHERE   year(hire_date) = 2025;

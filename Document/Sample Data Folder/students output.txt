@@ -1,0 +1,7 @@
+SELECT
+id,
+user_id,
+updated_at,
+status
+FROM   students
+WHERE   upper(student_name) = 'ARUN';

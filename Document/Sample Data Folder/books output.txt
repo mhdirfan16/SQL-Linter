@@ -1,0 +1,7 @@
+SELECT
+id,
+user_id,
+updated_at,
+status
+FROM   books
+WHERE   price + tax > 1000;

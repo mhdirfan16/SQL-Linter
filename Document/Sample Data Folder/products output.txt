@@ -1,0 +1,7 @@
+SELECT
+id,
+user_id,
+updated_at,
+status
+FROM   products
+WHERE   price * quantity > 10000;
