@@ -1,26 +1,88 @@
 # 🛠️ SQL Query Linter & Style Fixer
 
-### 📋 Project Overview
-  The SQL Query Linter & Style Fixer is an enterprise-grade command-line tool (CLI) designed to recursively scan, evaluate, and sanitize SQL database scripts. It enforces clean schema development standards, highlights code quality infractions, executes instant mechanical styling corrections, and calls upon local LLMs via Ollama to generate high-quality database refactoring advice. Furthermore, the tool automatically generates comprehensive JSON compliance audits alongside detailed markdown history logs.
-  ---
+## 🌐 Live Application
 
-### 🚀 Key Features
-  Recursive Source Exploration: Deeply scans project hierarchies to locate target `.sql` query scripts.
-  Deterministic Rules Engine:
-  CR-001 (SELECT * Warning): Warns against performance bottlenecks caused by blanket SELECT query expansions.
-  CR-002 (Casing Mandates): Ensures clean CamelCase conversions to consistent snake_case schema indicators.
-  CR-003 (Implicit Alias Warning): Checks table queries for obscure single-letter reference aliases (e.g., `profiles p`).
-  Automated Styling Corrections: Resolves rule infractions and applies upper-case keyword conventions non-destructively in-place.
-  Local LLM Orchestration: Employs Ollama (`llama3` or custom models) to produce complex schema optimizations, logging operations to `ai_prompts_used.md`.
-  Interactive CLI Dashboard: Presents findings using beautiful, colorized tables and interactive progress reporting.
-  Detailed Audit Reporting: Exports structured reports (`lint_report.json` & `lint_report.md`) for CI/CD gates and security evaluation.
-  ---
+Access the deployed application here:
 
-📂 Project Architecture
+**Application URL:**  
+https://remix-remix-sql-query-linter-style-fixer-292600835772.asia-southeast1.run.app
+
+---
+
+## 📋 Overview
+
+**SQL Query Linter & Style Fixer** is an enterprise-grade command-line tool (CLI) that automatically scans, analyzes, and standardizes SQL scripts across projects.
+
+The tool combines deterministic linting rules, automated formatting, and AI-powered refactoring using local Large Language Models (LLMs) through Ollama. It helps development teams maintain consistent SQL coding standards, improve readability, reduce technical debt, and generate compliance reports for auditing purposes.
+
+In addition to SQL style correction, the application produces detailed audit reports and AI recommendation logs that can be integrated into development workflows and CI/CD pipelines.
+
+---
+
+## 🚀 Key Features
+
+### 🔍 Recursive SQL Discovery
+- Recursively scans project directories
+- Automatically discovers `.sql` files
+- Supports large SQL codebases
+
+### ⚙️ Deterministic Rule Engine
+
+#### CR-001 — SELECT * Detection
+Detects usage of `SELECT *` and recommends explicit column selection to improve performance and maintainability.
+
+#### CR-002 — Naming Convention Enforcement
+Converts inconsistent naming patterns into standardized `snake_case` conventions.
+
+#### CR-003 — Alias Validation
+Detects ambiguous aliases and encourages meaningful table references.
+
+#### CR-004 — Implicit Join Detection
+Identifies legacy implicit joins and recommends explicit JOIN syntax.
+
+#### CR-005 — SQL Keyword Standardization
+Enforces uppercase SQL keywords for improved readability.
+
+### 🔧 Automated Style Fixes
+- SQL keyword formatting
+- Naming convention correction
+- Alias improvements
+- Join syntax normalization
+- Consistent indentation and formatting
+
+### 🤖 AI-Powered Refactoring
+Uses local LLMs through Ollama to:
+
+- Improve query readability
+- Suggest performance optimizations
+- Recommend structural improvements
+- Generate advanced refactoring suggestions
+- Provide maintainability recommendations
+
+### 📊 Audit Reporting
+Automatically generates:
+
+- `lint_report.json`
+- `lint_report.md`
+- `ai_prompts_used.md`
+
+### 🖥️ Interactive CLI Dashboard
+Provides:
+
+- Colorized terminal output
+- Progress indicators
+- Compliance summaries
+- Rule violation statistics
+- Processing metrics
+
+---
+
+## 🏗️ System Architecture
+
 ```text
                      ┌─────────────────────────────┐
                      │     Target SQL Scripts      │
-                     │  (/**/*.sql folder scanner)  │
+                     │  (/**/*.sql folder scanner) │
                      └──────────────┬──────────────┘
                                     │
                                     ▼
@@ -31,135 +93,320 @@
                                     │
                                     ▼
                      ┌──────────────┴──────────────┐      ┌─────────────────────────┐
-                     │      SQLLinter Client       ├─────►│    sqlfluff Engine      │
+                     │      SQLLinter Client       ├─────►│     SQLFluff Engine     │
                      │         (linter.py)         │      │  (Programmatic Parser)  │
                      └──────────────┬──────────────┘      └─────────────────────────┘
                                     │
             ┌───────────────────────┴───────────────────────┐
             ▼                                               ▼
 ┌───────────────────────┐                       ┌───────────────────────┐
-│     Rule Engine       │                       │      AutoFixer        │
-│   (rule_engine.py)    │                       │    (auto_fixer.py)    │
+│      Rule Engine      │                       │      Auto Fixer       │
+│    (rule_engine.py)   │                       │    (auto_fixer.py)    │
 ├───────────────────────┤                       ├───────────────────────┤
-│ RULE-001: SELECT *    │                       │ - Expand SELECT *     │
-│ RULE-002: camelCase   │                       │ - snake_case Rename   │
-│ RULE-003: short alias │                       │ - Alias Refactoring   │
-│ RULE-004: implicit join│                      │ - Join Translation    │
-│ RULE-005: mixed case  │                       │ - Uppercase Keywords  │
+│ RULE-001: SELECT *    │                       │ Expand SELECT *       │
+│ RULE-002: snake_case  │                       │ snake_case Rename     │
+│ RULE-003: Alias Check │                       │ Alias Refactoring     │
+│ RULE-004: Join Check  │                       │ Join Translation      │
+│ RULE-005: Formatting  │                       │ Keyword Standardize   │
 └───────────┬───────────┘                       └───────────┬───────────┘
             │                                               │
             └───────────────────────┬───────────────────────┘
-                                    │ (Unresolved / Non-Mechanical Issues)
-                                    ▼
-                     ┌─────────────────────────────┐
-                     │       SQLLMAgent Loop       │
-                     │        (llm_agent.py)       │
-                     ├─────────────────────────────┤      ┌─────────────────────────┐
-                     │    Ollama API Client /      ├─────►│   Local Ollama Dev Node │
-                     │    Groq SDK Integration     │      │   (host:11434 / llama3) │
-                     └──────────────┬──────────────┘      └─────────────────────────┘
                                     │
                                     ▼
-                     ┌──────────────┴──────────────┐
-                     │        ReportWriter         │
-                     │      (report_writer.py)     │
+                     ┌─────────────────────────────┐
+                     │       SQL LLM Agent         │
+                     │       (llm_agent.py)        │
                      ├─────────────────────────────┤
-                     │ - lint_report.json (Audit)  │
-                     │ - lint_report.md (Readable) │
-                     │ - ai_prompts_used.md (Log)  │
+                     │ Ollama / Groq Integration   │
+                     │ llama3 / Local Models       │
+                     └──────────────┬──────────────┘
+                                    │
+                                    ▼
+                     ┌─────────────────────────────┐
+                     │        Report Writer        │
+                     │    (report_writer.py)       │
+                     ├─────────────────────────────┤
+                     │ lint_report.json            │
+                     │ lint_report.md              │
+                     │ ai_prompts_used.md          │
                      └─────────────────────────────┘
 ```
 
-File Hierarchy
+# 📂 Project Structure
+
 ```text
 sql-query-linter/
+│
 ├── .github/
 │   └── workflows/
-│       └── ci.yml             # Automatic validation workflow
+│       └── ci.yml
+│
 ├── sql_linter/
-│   ├── __init__.py           # Distribution build descriptor
-│   ├── cli.py                # Command line orchestration entry point
-│   ├── linter.py             # Rule assessment and mechanical formatting bridge
-│   ├── rule_engine.py        # Abstract AST validator definitions
-│   ├── auto_fixer.py         # Regular expression-driven code repair
-│   ├── report_writer.py      # JSON metrics compilation & markdown exporter
-│   ├── ai_agent.py           # Legacy AI client wrapper
-│   └── llm_agent.py          # Llama3 Client & prompt dispatch log manager
+│   ├── __init__.py
+│   ├── cli.py
+│   ├── linter.py
+│   ├── rule_engine.py
+│   ├── auto_fixer.py
+│   ├── report_writer.py
+│   ├── ai_agent.py
+│   └── llm_agent.py
+│
 ├── tests/
-│   ├── __init__.py           # Testing package descriptor
-│   └── test_linter.py        # Pytest integration/unit test boundaries
-├── .sqlfluff                 # External static-analysis parameters
-├── pyproject.toml            # Package dependency, configuration & lint scripts
-└── README.md                 # Complete user & developer documentation
+│   ├── __init__.py
+│   └── test_linter.py
+│
+├── .sqlfluff
+├── pyproject.toml
+└── README.md
 ```
+
 ---
 
-🛠️ Installation & Setup
-Follow these simple commands to establish your local database engineering workbench:
-1. Environment & Utilities Activation
-Ensure you have Python 3.11 or greater installed:
-```bash
-# Create and activate an isolated python virtual environment
-python -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+# 🛠️ Installation
 
-# Install the system package in development (editable) mode
+## Prerequisites
+
+- Python 3.11+
+- Ollama (optional for AI refactoring)
+- Git
+
+### Create a Virtual Environment
+
+```bash
+python -m venv .venv
+```
+
+### Activate Environment
+
+#### Linux / macOS
+
+```bash
+source .venv/bin/activate
+```
+
+#### Windows
+
+```bash
+.venv\Scripts\activate
+```
+
+### Install Dependencies
+
+```bash
 pip install -e ".[dev]"
 ```
 
-2. Configure Local AI Co-pilot (Ollama)
-Configure a local Ollama daemon to host database optimization capabilities:
-```bash
-# Verify local daemon connectivity and active images
-ollama list
-
-# Retrieve the llama3 model (or specify alternatives as required)
-ollama pull llama3
-```
 ---
 
-### 💻 CLI Commands & Usage
-Execute tasks via the centralized `sql-lint-fixer` shell gateway:
-Scan Target Folders
-Analyze all database files and catalog potential standards violations:
+# 🤖 Configure Ollama
+
+Verify Ollama installation:
+
 ```bash
-sql-lint-fixer lint <folder_path> --report <output_report_json>
+ollama list
 ```
-Execute Automatic Code Refactoring
-Repair matching styling, naming casing, and keyword validation infractions in-place:
+
+Download the Llama 3 model:
+
+```bash
+ollama pull llama3
+```
+
+You may also use other locally available models.
+
+---
+
+# 💻 Usage
+
+## Lint SQL Files
+
+Analyze SQL files and generate a compliance report.
+
+```bash
+sql-lint-fixer lint <folder_path> --report lint_report.json
+```
+
+### Example
+
+```bash
+sql-lint-fixer lint ./sql_scripts --report lint_report.json
+```
+
+---
+
+## Apply Automatic Fixes
+
+Automatically fixes supported style violations.
+
 ```bash
 sql-lint-fixer fix <folder_path>
 ```
-Run Local AI Analysis
-Submit database scripts to Ollama to acquire advanced tuning recommendations:
+
+### Example
+
 ```bash
-sql-lint-fixer ai-refactor <folder_path> --model llama3 --ollama-host http://localhost:11434
+sql-lint-fixer fix ./sql_scripts
 ```
-Display Interactive Auditor Dashboard
-Display a beautiful colorized screen summarizing scanned query scores and file compliance indexes:
+
+---
+
+## Run AI Refactoring
+
+Generate advanced SQL improvement suggestions using local LLMs.
+
+```bash
+sql-lint-fixer ai-refactor <folder_path> \
+--model llama3 \
+--ollama-host http://localhost:11434
+```
+
+### Example
+
+```bash
+sql-lint-fixer ai-refactor ./sql_scripts \
+--model llama3
+```
+
+---
+
+## View Compliance Dashboard
+
+Display a summarized audit report.
+
 ```bash
 sql-lint-fixer report --file lint_report.json
 ```
+
 ---
 
-### 🧪 Assumed Architectural Decisions
-Offline Integrity: Core execution operates independent of external network layers. Static validation, lint fixing, and AI refactoring occur strictly on-device.
-Graceful Handoff Boundaries: If Ollama or selected LLM systems are unreachable, the application continues to report static linter findings without raising blocking crashes.
-Strict Lint Pre-requisites: All SQL query parsing and styling modifications preserve standard database logical structures without modifying indexing or schemas on database engines directly.
+# 📄 Generated Reports
+
+| File | Description |
+|--------|-------------|
+| lint_report.json | Machine-readable audit report |
+| lint_report.md | Human-readable compliance summary |
+| ai_prompts_used.md | AI interaction and prompt log |
+
 ---
 
-### ⚠️ Known Limitations
-Token Constraints: While sufficient for standard application scripts, extremely large SQL files (e.g. >10,000 lines or schema dumps) may consume noticeable local memory and model response budget.
-Static vs Runtime Parsing: The linter parses syntax statically using standard text structures without establishing a live connection to a staging database. Certain highly specialized spatial or engine-specific functions might not register in static evaluations.
+# 🧪 Architectural Principles
+
+## Offline-First Design
+
+All linting, formatting, and AI refactoring can run locally without relying on external cloud services.
+
+## Fault-Tolerant Execution
+
+If Ollama is unavailable:
+
+- Linting continues normally
+- Reports are still generated
+- The application does not crash
+- AI steps are gracefully skipped
+
+## Safe Refactoring
+
+The application only modifies SQL formatting and style conventions.
+
+It never:
+
+- Connects to production databases
+- Executes SQL queries
+- Modifies schemas
+- Alters database contents
+
 ---
 
-### 🚀 Future Improvements
-Live Database Grounding: Introduce optional schema analysis by querying active metadata and primary keys in relational engines (such as PostgreSQL or MySQL).
-Custom Rule Specification: Enable engineers to define custom YAML files to specify custom keyword formatting constraints or naming patterns.
-Expanded Model Registries: Provide native wrappers to support deep structural recommendations from custom self-hosted model layers.
+# ⚠️ Known Limitations
+
+## Large SQL Files
+
+Extremely large SQL scripts (>10,000 lines) may increase:
+
+- Memory consumption
+- Processing time
+- AI response latency
+
+## Static Analysis Only
+
+The tool performs static SQL analysis and does not validate queries against live database schemas.
+
+Certain engine-specific SQL extensions may not be fully recognized.
+
 ---
-🧪 Running Pytest Tests
-To execute tests and print outcomes with standard assertion details:
+
+# 🚀 Future Enhancements
+
+## Live Schema Awareness
+
+Support metadata inspection for:
+
+- PostgreSQL
+- MySQL
+- SQL Server
+- Oracle
+
+## Custom Rule Packs
+
+Allow organizations to define custom linting rules through YAML configuration files.
+
+## Expanded Model Support
+
+Support additional local and cloud-hosted LLM providers.
+
+## CI/CD Integration
+
+Provide GitHub Actions and GitLab CI templates for automated SQL quality checks.
+
+## Interactive Web Dashboard
+
+Introduce a browser-based UI for SQL review, compliance monitoring, and AI-assisted refactoring.
+
+---
+
+# 🧪 Running Tests
+
+Execute all tests:
+
 ```bash
 pytest -v
 ```
+
+Run code coverage:
+
+```bash
+pytest --cov=sql_linter
+```
+
+---
+
+# 🛠️ Technology Stack
+
+| Category | Technology |
+|-----------|------------|
+| Language | Python 3.11+ |
+| SQL Parsing | SQLFluff |
+| AI Runtime | Ollama |
+| AI Models | Llama 3 |
+| CLI Framework | Typer / Click |
+| Terminal UI | Rich |
+| Testing | Pytest |
+| CI/CD | GitHub Actions |
+
+---
+
+# 🎯 Project Goal
+
+The goal of this project is to build a reliable AI-assisted SQL quality platform that helps engineering teams maintain clean, consistent, readable, and production-ready SQL code across large-scale database projects.
+
+By combining deterministic linting with AI-powered recommendations, the tool improves developer productivity, reduces code review effort, and promotes long-term SQL maintainability.
+
+---
+
+## 📜 License
+
+This project is intended for educational, research, and enterprise SQL quality automation purposes.
+
+---
+
+**Built with ❤️ for Database Engineers, Data Teams, and Software Developers.**
