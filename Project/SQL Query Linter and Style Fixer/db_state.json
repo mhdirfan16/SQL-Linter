@@ -1,0 +1,639 @@
+{
+  "users": [
+    {
+      "email": "admin@company.com",
+      "passwordHash": "04445e6487736590d1ef50186b414e737e0164683cbbec64e00e73c000fd3bef",
+      "role": "Admin",
+      "mfaSecret": "SENTRYADMIN",
+      "mfaEnabled": true,
+      "failedLoginCount": 0
+    },
+    {
+      "email": "developer@company.com",
+      "passwordHash": "d936e147b7cf009ff126cc13a0b7194d107d278877292c8f1133dd58731f1e76",
+      "role": "Developer",
+      "mfaSecret": "SENTRYDEV",
+      "mfaEnabled": true,
+      "failedLoginCount": 0
+    }
+  ],
+  "auditLogs": [
+    {
+      "user": "admin@company.com",
+      "action": "Correct credentials entered. Challenging multi-factor authenticator",
+      "timestamp": "2026-06-09T09:47:11.893Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Pending MFA"
+    },
+    {
+      "user": "admin@company.com",
+      "action": "Full Session Established via SSO-MFA",
+      "timestamp": "2026-06-09T09:43:09.978Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Authorized"
+    },
+    {
+      "user": "admin@company.com",
+      "action": "Correct credentials entered. Challenging multi-factor authenticator",
+      "timestamp": "2026-06-09T09:42:57.780Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Pending MFA"
+    },
+    {
+      "user": "developer@company.com",
+      "action": "Full Session Established via SSO-MFA",
+      "timestamp": "2026-06-09T09:42:37.558Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Authorized"
+    },
+    {
+      "user": "developer@company.com",
+      "action": "Correct credentials entered. Challenging multi-factor authenticator",
+      "timestamp": "2026-06-09T09:42:28.481Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Pending MFA"
+    },
+    {
+      "user": "developer@company.com",
+      "action": "Full Session Established via SSO-MFA",
+      "timestamp": "2026-06-09T09:42:15.626Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Authorized"
+    },
+    {
+      "user": "developer@company.com",
+      "action": "Correct credentials entered. Challenging multi-factor authenticator",
+      "timestamp": "2026-06-09T09:41:57.184Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Pending MFA"
+    },
+    {
+      "user": "assees@gamil.com",
+      "action": "Illegal Domain Login Bypass Blocked",
+      "timestamp": "2026-06-09T09:41:41.758Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Access Rejected"
+    },
+    {
+      "user": "assees@gamil.com",
+      "action": "Illegal Domain Login Bypass Blocked",
+      "timestamp": "2026-06-09T09:41:38.104Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Access Rejected"
+    },
+    {
+      "user": "developer@company.com",
+      "action": "Full Session Established via SSO-MFA",
+      "timestamp": "2026-06-09T09:30:12.515Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Authorized"
+    },
+    {
+      "user": "developer@company.com",
+      "action": "Correct credentials entered. Challenging multi-factor authenticator",
+      "timestamp": "2026-06-09T09:30:04.475Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Pending MFA"
+    },
+    {
+      "user": "reviewer@company.com",
+      "action": "Unauthorized Role Access",
+      "timestamp": "2026-06-09T09:28:17.227Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Blocked"
+    },
+    {
+      "user": "reviewer@company.com",
+      "action": "Unauthorized Role Access",
+      "timestamp": "2026-06-09T09:28:17.115Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Blocked"
+    },
+    {
+      "user": "reviewer@company.com",
+      "action": "Unauthorized Role Access",
+      "timestamp": "2026-06-09T09:28:16.548Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Blocked"
+    },
+    {
+      "user": "reviewer@company.com",
+      "action": "Unauthorized Role Access",
+      "timestamp": "2026-06-09T09:28:16.478Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Blocked"
+    },
+    {
+      "user": "reviewer@company.com",
+      "action": "Full Session Established via SSO-MFA",
+      "timestamp": "2026-06-09T09:27:17.211Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Authorized"
+    },
+    {
+      "user": "reviewer@company.com",
+      "action": "Correct credentials entered. Challenging multi-factor authenticator",
+      "timestamp": "2026-06-09T09:27:07.220Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Pending MFA"
+    },
+    {
+      "user": "admin@company.com",
+      "action": "Local AI Refactor processed (Cloud transfer blocked)",
+      "timestamp": "2026-06-09T09:25:15.605Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Success (Local AI)"
+    },
+    {
+      "user": "admin@company.com",
+      "action": "Local AI Refactor processed (Cloud transfer blocked)",
+      "timestamp": "2026-06-09T09:25:15.566Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Success (Local AI)"
+    },
+    {
+      "user": "admin@company.com",
+      "action": "Secure temporary encryption file queued (customer.sql)",
+      "timestamp": "2026-06-09T09:25:15.201Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Encrypted & Isolated"
+    },
+    {
+      "user": "admin@company.com",
+      "action": "Secure temporary encryption file queued (customer.sql)",
+      "timestamp": "2026-06-09T09:25:15.165Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Encrypted & Isolated"
+    },
+    {
+      "user": "admin@company.com",
+      "action": "Full Session Established via SSO-MFA",
+      "timestamp": "2026-06-09T09:25:06.886Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Authorized"
+    },
+    {
+      "user": "admin@company.com",
+      "action": "Correct credentials entered. Challenging multi-factor authenticator",
+      "timestamp": "2026-06-09T09:24:56.764Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Pending MFA"
+    },
+    {
+      "user": "reviewer@company.com",
+      "action": "Full Session Established via SSO-MFA",
+      "timestamp": "2026-06-09T09:18:43.050Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Authorized"
+    },
+    {
+      "user": "reviewer@company.com",
+      "action": "MFA Verification Failed",
+      "timestamp": "2026-06-09T09:18:31.727Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Incorrect Token Code"
+    },
+    {
+      "user": "reviewer@company.com",
+      "action": "Correct credentials entered. Challenging multi-factor authenticator",
+      "timestamp": "2026-06-09T09:18:25.686Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Pending MFA"
+    },
+    {
+      "user": "developer@company.com",
+      "action": "Local AI Refactor processed (Cloud transfer blocked)",
+      "timestamp": "2026-06-09T09:17:25.888Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Success (Local AI)"
+    },
+    {
+      "user": "developer@company.com",
+      "action": "Local AI Refactor processed (Cloud transfer blocked)",
+      "timestamp": "2026-06-09T09:17:25.684Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Success (Local AI)"
+    },
+    {
+      "user": "developer@company.com",
+      "action": "Secure temporary encryption file queued (transactions_fixed.sql)",
+      "timestamp": "2026-06-09T09:17:25.355Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Encrypted & Isolated"
+    },
+    {
+      "user": "developer@company.com",
+      "action": "Secure temporary encryption file queued (transactions_fixed.sql)",
+      "timestamp": "2026-06-09T09:17:25.319Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Encrypted & Isolated"
+    },
+    {
+      "user": "developer@company.com",
+      "action": "Full Session Established via SSO-MFA",
+      "timestamp": "2026-06-09T09:17:04.011Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Authorized"
+    },
+    {
+      "user": "developer@company.com",
+      "action": "Correct credentials entered. Challenging multi-factor authenticator",
+      "timestamp": "2026-06-09T09:16:53.407Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Pending MFA"
+    },
+    {
+      "user": "admin@company.com",
+      "action": "Full Session Established via SSO-MFA",
+      "timestamp": "2026-06-09T09:16:01.209Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Authorized"
+    },
+    {
+      "user": "admin@company.com",
+      "action": "Correct credentials entered. Challenging multi-factor authenticator",
+      "timestamp": "2026-06-09T09:15:47.774Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Pending MFA"
+    },
+    {
+      "user": "reviewer@company.com",
+      "action": "Unauthorized Role Access",
+      "timestamp": "2026-06-09T09:15:00.656Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Blocked"
+    },
+    {
+      "user": "reviewer@company.com",
+      "action": "Unauthorized Role Access",
+      "timestamp": "2026-06-09T09:15:00.341Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Blocked"
+    },
+    {
+      "user": "reviewer@company.com",
+      "action": "Unauthorized Role Access",
+      "timestamp": "2026-06-09T09:14:59.688Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Blocked"
+    },
+    {
+      "user": "reviewer@company.com",
+      "action": "Unauthorized Role Access",
+      "timestamp": "2026-06-09T09:14:59.650Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Blocked"
+    },
+    {
+      "user": "reviewer@company.com",
+      "action": "Unauthorized Role Access",
+      "timestamp": "2026-06-09T08:54:10.577Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Blocked"
+    },
+    {
+      "user": "reviewer@company.com",
+      "action": "Unauthorized Role Access",
+      "timestamp": "2026-06-09T08:54:10.059Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Blocked"
+    },
+    {
+      "user": "reviewer@company.com",
+      "action": "Unauthorized Role Access",
+      "timestamp": "2026-06-09T08:54:08.116Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Blocked"
+    },
+    {
+      "user": "reviewer@company.com",
+      "action": "Unauthorized Role Access",
+      "timestamp": "2026-06-09T08:54:08.078Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Blocked"
+    },
+    {
+      "user": "reviewer@company.com",
+      "action": "Full Session Established via SSO-MFA",
+      "timestamp": "2026-06-09T08:52:03.844Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Authorized"
+    },
+    {
+      "user": "reviewer@company.com",
+      "action": "Correct credentials entered. Challenging multi-factor authenticator",
+      "timestamp": "2026-06-09T08:51:51.900Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Pending MFA"
+    },
+    {
+      "user": "developer@company.com",
+      "action": "Full Session Established via SSO-MFA",
+      "timestamp": "2026-06-09T08:51:11.697Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Authorized"
+    },
+    {
+      "user": "developer@company.com",
+      "action": "Correct credentials entered. Challenging multi-factor authenticator",
+      "timestamp": "2026-06-09T08:50:51.389Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Pending MFA"
+    },
+    {
+      "user": "admin@company.com",
+      "action": "Local AI Refactor processed (Cloud transfer blocked)",
+      "timestamp": "2026-06-09T08:49:55.514Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Success (Local AI)"
+    },
+    {
+      "user": "admin@company.com",
+      "action": "Local AI Refactor processed (Cloud transfer blocked)",
+      "timestamp": "2026-06-09T08:49:55.482Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Success (Local AI)"
+    },
+    {
+      "user": "admin@company.com",
+      "action": "Secure temporary encryption file queued (customer.sql)",
+      "timestamp": "2026-06-09T08:49:54.566Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Encrypted & Isolated"
+    },
+    {
+      "user": "admin@company.com",
+      "action": "Secure temporary encryption file queued (customer.sql)",
+      "timestamp": "2026-06-09T08:49:54.552Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Encrypted & Isolated"
+    },
+    {
+      "user": "admin@company.com",
+      "action": "Full Session Established via SSO-MFA",
+      "timestamp": "2026-06-09T08:49:33.442Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Authorized"
+    },
+    {
+      "user": "admin@company.com",
+      "action": "Correct credentials entered. Challenging multi-factor authenticator",
+      "timestamp": "2026-06-09T08:49:17.662Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Pending MFA"
+    },
+    {
+      "user": "system@company.com",
+      "action": "Security Suite Initialized",
+      "timestamp": "2026-06-09T08:48:08.407Z",
+      "ipAddress": "127.0.0.1",
+      "status": "Success"
+    }
+  ],
+  "alerts": [
+    {
+      "id": "ALT-1780998189979-381",
+      "user": "admin@company.com",
+      "action": "Successful User Authorization Suite",
+      "level": "Low",
+      "timestamp": "2026-06-09T09:43:09.979Z",
+      "description": "MFA profile authorized. Issued cryptographical token bearer for access role context -> Admin",
+      "status": "active"
+    },
+    {
+      "id": "ALT-1780998157559-177",
+      "user": "developer@company.com",
+      "action": "Successful User Authorization Suite",
+      "level": "Low",
+      "timestamp": "2026-06-09T09:42:37.559Z",
+      "description": "MFA profile authorized. Issued cryptographical token bearer for access role context -> Developer",
+      "status": "active"
+    },
+    {
+      "id": "ALT-1780998135627-309",
+      "user": "developer@company.com",
+      "action": "Successful User Authorization Suite",
+      "level": "Low",
+      "timestamp": "2026-06-09T09:42:15.627Z",
+      "description": "MFA profile authorized. Issued cryptographical token bearer for access role context -> Developer",
+      "status": "active"
+    },
+    {
+      "id": "ALT-1780998101758-443",
+      "user": "anonymous",
+      "action": "Access Blocked: Illegal Domain SSO Attempt",
+      "level": "Critical",
+      "timestamp": "2026-06-09T09:41:41.758Z",
+      "description": "Intruder attempt to register/login with generic email \"assees@gamil.com\". Suspicious domain access blocked.",
+      "status": "active"
+    },
+    {
+      "id": "ALT-1780998098104-688",
+      "user": "anonymous",
+      "action": "Access Blocked: Illegal Domain SSO Attempt",
+      "level": "Critical",
+      "timestamp": "2026-06-09T09:41:38.104Z",
+      "description": "Intruder attempt to register/login with generic email \"assees@gamil.com\". Suspicious domain access blocked.",
+      "status": "active"
+    },
+    {
+      "id": "ALT-1780997412516-795",
+      "user": "developer@company.com",
+      "action": "Successful User Authorization Suite",
+      "level": "Low",
+      "timestamp": "2026-06-09T09:30:12.516Z",
+      "description": "MFA profile authorized. Issued cryptographical token bearer for access role context -> Developer",
+      "status": "active"
+    },
+    {
+      "id": "ALT-1780997297227-217",
+      "user": "reviewer@company.com",
+      "action": "Role-Based Security Violation",
+      "level": "High",
+      "timestamp": "2026-06-09T09:28:17.227Z",
+      "description": "User holds role 'Reviewer' but attempted restricted operation. Expected: [Admin, Developer]",
+      "status": "active"
+    },
+    {
+      "id": "ALT-1780997297116-69",
+      "user": "reviewer@company.com",
+      "action": "Role-Based Security Violation",
+      "level": "High",
+      "timestamp": "2026-06-09T09:28:17.116Z",
+      "description": "User holds role 'Reviewer' but attempted restricted operation. Expected: [Admin, Developer]",
+      "status": "active"
+    },
+    {
+      "id": "ALT-1780997296548-193",
+      "user": "reviewer@company.com",
+      "action": "Role-Based Security Violation",
+      "level": "High",
+      "timestamp": "2026-06-09T09:28:16.548Z",
+      "description": "User holds role 'Reviewer' but attempted restricted operation. Expected: [Admin, Developer]",
+      "status": "active"
+    },
+    {
+      "id": "ALT-1780997296478-787",
+      "user": "reviewer@company.com",
+      "action": "Role-Based Security Violation",
+      "level": "High",
+      "timestamp": "2026-06-09T09:28:16.478Z",
+      "description": "User holds role 'Reviewer' but attempted restricted operation. Expected: [Admin, Developer]",
+      "status": "active"
+    },
+    {
+      "id": "ALT-1780997237211-967",
+      "user": "reviewer@company.com",
+      "action": "Successful User Authorization Suite",
+      "level": "Low",
+      "timestamp": "2026-06-09T09:27:17.211Z",
+      "description": "MFA profile authorized. Issued cryptographical token bearer for access role context -> Reviewer",
+      "status": "active"
+    },
+    {
+      "id": "ALT-1780997106886-408",
+      "user": "admin@company.com",
+      "action": "Successful User Authorization Suite",
+      "level": "Low",
+      "timestamp": "2026-06-09T09:25:06.886Z",
+      "description": "MFA profile authorized. Issued cryptographical token bearer for access role context -> Admin",
+      "status": "active"
+    },
+    {
+      "id": "ALT-1780996723051-187",
+      "user": "reviewer@company.com",
+      "action": "Successful User Authorization Suite",
+      "level": "Low",
+      "timestamp": "2026-06-09T09:18:43.051Z",
+      "description": "MFA profile authorized. Issued cryptographical token bearer for access role context -> Reviewer",
+      "status": "active"
+    },
+    {
+      "id": "ALT-1780996624011-950",
+      "user": "developer@company.com",
+      "action": "Successful User Authorization Suite",
+      "level": "Low",
+      "timestamp": "2026-06-09T09:17:04.011Z",
+      "description": "MFA profile authorized. Issued cryptographical token bearer for access role context -> Developer",
+      "status": "active"
+    },
+    {
+      "id": "ALT-1780996561209-788",
+      "user": "admin@company.com",
+      "action": "Successful User Authorization Suite",
+      "level": "Low",
+      "timestamp": "2026-06-09T09:16:01.209Z",
+      "description": "MFA profile authorized. Issued cryptographical token bearer for access role context -> Admin",
+      "status": "active"
+    },
+    {
+      "id": "ALT-1780996500656-883",
+      "user": "reviewer@company.com",
+      "action": "Role-Based Security Violation",
+      "level": "High",
+      "timestamp": "2026-06-09T09:15:00.656Z",
+      "description": "User holds role 'Reviewer' but attempted restricted operation. Expected: [Admin, Developer]",
+      "status": "active"
+    },
+    {
+      "id": "ALT-1780996500341-159",
+      "user": "reviewer@company.com",
+      "action": "Role-Based Security Violation",
+      "level": "High",
+      "timestamp": "2026-06-09T09:15:00.341Z",
+      "description": "User holds role 'Reviewer' but attempted restricted operation. Expected: [Admin, Developer]",
+      "status": "active"
+    },
+    {
+      "id": "ALT-1780996499688-871",
+      "user": "reviewer@company.com",
+      "action": "Role-Based Security Violation",
+      "level": "High",
+      "timestamp": "2026-06-09T09:14:59.688Z",
+      "description": "User holds role 'Reviewer' but attempted restricted operation. Expected: [Admin, Developer]",
+      "status": "active"
+    },
+    {
+      "id": "ALT-1780996499650-764",
+      "user": "reviewer@company.com",
+      "action": "Role-Based Security Violation",
+      "level": "High",
+      "timestamp": "2026-06-09T09:14:59.650Z",
+      "description": "User holds role 'Reviewer' but attempted restricted operation. Expected: [Admin, Developer]",
+      "status": "active"
+    },
+    {
+      "id": "ALT-1780995250577-142",
+      "user": "reviewer@company.com",
+      "action": "Role-Based Security Violation",
+      "level": "High",
+      "timestamp": "2026-06-09T08:54:10.577Z",
+      "description": "User holds role 'Reviewer' but attempted restricted operation. Expected: [Admin, Developer]",
+      "status": "active"
+    },
+    {
+      "id": "ALT-1780995250060-823",
+      "user": "reviewer@company.com",
+      "action": "Role-Based Security Violation",
+      "level": "High",
+      "timestamp": "2026-06-09T08:54:10.060Z",
+      "description": "User holds role 'Reviewer' but attempted restricted operation. Expected: [Admin, Developer]",
+      "status": "active"
+    },
+    {
+      "id": "ALT-1780995248116-996",
+      "user": "reviewer@company.com",
+      "action": "Role-Based Security Violation",
+      "level": "High",
+      "timestamp": "2026-06-09T08:54:08.116Z",
+      "description": "User holds role 'Reviewer' but attempted restricted operation. Expected: [Admin, Developer]",
+      "status": "active"
+    },
+    {
+      "id": "ALT-1780995248078-727",
+      "user": "reviewer@company.com",
+      "action": "Role-Based Security Violation",
+      "level": "High",
+      "timestamp": "2026-06-09T08:54:08.078Z",
+      "description": "User holds role 'Reviewer' but attempted restricted operation. Expected: [Admin, Developer]",
+      "status": "active"
+    },
+    {
+      "id": "ALT-1780995123844-821",
+      "user": "reviewer@company.com",
+      "action": "Successful User Authorization Suite",
+      "level": "Low",
+      "timestamp": "2026-06-09T08:52:03.844Z",
+      "description": "MFA profile authorized. Issued cryptographical token bearer for access role context -> Reviewer",
+      "status": "active"
+    },
+    {
+      "id": "ALT-1780995071698-831",
+      "user": "developer@company.com",
+      "action": "Successful User Authorization Suite",
+      "level": "Low",
+      "timestamp": "2026-06-09T08:51:11.698Z",
+      "description": "MFA profile authorized. Issued cryptographical token bearer for access role context -> Developer",
+      "status": "active"
+    },
+    {
+      "id": "ALT-1780994973443-387",
+      "user": "admin@company.com",
+      "action": "Successful User Authorization Suite",
+      "level": "Low",
+      "timestamp": "2026-06-09T08:49:33.443Z",
+      "description": "MFA profile authorized. Issued cryptographical token bearer for access role context -> Admin",
+      "status": "active"
+    }
+  ],
+  "settings": {
+    "allowExternalAI": false,
+    "blockDangerousSql": true,
+    "uploadThreshold": 10,
+    "downloadThreshold": 10,
+    "domainsAllowlist": [
+      "@company.com",
+      "@corp.company.com"
+    ]
+  }
+}

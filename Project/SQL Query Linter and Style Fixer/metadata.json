@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Remix: SQL Query Linter \u0026 Style Fixer",
+  "description": "An interactive blueprint platform, code generator, architecture designer, and real-time SQL linting and refactoring simulation engine for the SQL Query Linter \u0026 Style Fixer project.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
