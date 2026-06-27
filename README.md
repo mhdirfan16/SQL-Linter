@@ -5,8 +5,7 @@
 Access the deployed application here:
 
 **Application URL:**  
-https://remix-remix-sql-query-linter-style-fixer-292600835772.asia-southeast1.run.app
-
+https://remix-remix-sql-query-linter-style-fixer-130169087811.asia-southeast1.run.app/
 ---
 
 ## 📋 Overview
